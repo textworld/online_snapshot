@@ -9,10 +9,6 @@ This project can help you snapshot a website by providing an url.  You can learn
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-	- [Generator](#generator)
-- [Badge](#badge)
-- [Example Readmes](#example-readmes)
-- [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
@@ -30,15 +26,7 @@ You need to download the chrome driver from [https://chromedriver.chromium.org/]
 Then change the CHROME_DRIVE to the path you put the chrome driver in the `autosnap/settings.py`.
 
 ```python
-MEDIA_ROOT = '/var/www/'
-
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    MEDIA_ROOT,
-]
-
-CHROME_DRIVE = r"/Users/textworld/bin/chromedriver" # change here
+CHROME_DRIVE = r"/Users/textworld/bin/chromedriver" # the bottom of file
 ```
 
 Next, you need install Django(>=3.0.2). Google it if you don't know how.
