@@ -43,11 +43,6 @@ After you run server, there are 3 pages in this website.
 
 First paste the url in the index page. Then click the submit button and wait for a few seconds. Then the browser will navigate you to the detail page. You will see the title, the url and an snapshot image.  
 
-
-### Generator
-
-To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`.
-
 ## Maintainers
 
 [@textworld](https://github.com/textworld).
