@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{% static 'bootstrap-4.4.1-dist/css/bootstrap.min.css' %}" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'indexapp:index' %}">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{%endif%}">
+                    <a class="nav-link" href="{% url 'indexapp:index' %}">首页
+                        {% if request.resolver_match.url_name == 'index' %}
+                        <span class="sr-only">(current)</span>
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'list' %}active{%endif%}">
+                    <a class="nav-link" href="{% url 'indexapp:list' %}">列表页
+                        {% if request.resolver_match.url_name == 'list' %}
+                        <span class="sr-only">(current)</span>
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    {% block content %}
+
+    {% endblock %}
+</div>
+<script src="{% static 'bootstrap-4.4.1-dist/js/jquery.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap-4.4.1-dist/js/popper.min.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap-4.4.1-dist/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+</body>
+</html>

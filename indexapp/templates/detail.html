@@ -1,0 +1,18 @@
+{%  extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+    <h1>{{ page.page_title }}</h1>
+    <p>
+        url: <a href="{{page.url}}">{{page.url}}</a>
+    </p>
+    <p>
+        url_hash: {{page.url_hash}}
+    </p>
+    <p>
+        <img src="{% static page.image_path %}" alt="" />
+    </p>
+</div>
+
+{% endblock %}

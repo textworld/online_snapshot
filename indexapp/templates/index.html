@@ -1,0 +1,24 @@
+{%  extends 'layout.html' %}
+{% block content %}
+<div style="margin-top: 10px;">
+    <form method="post" action="{% url 'indexapp:index' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control" id="webUrl" placeholder="请将浏览器的url粘贴到此处" name="url">
+            {% if form.url.errors and posted %}
+            <span id="url-error-msg" class="help-block">
+        {% for error in form.url.errors %}
+            {{ error|escape }}
+        {% endfor %}
+        </span>
+            {% endif %}
+        </div>
+        {{ form.non_field_errors }}
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

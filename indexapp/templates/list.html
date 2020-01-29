@@ -1,0 +1,9 @@
+{%  extends 'layout.html' %}
+{% block content %}
+<ul>
+    {% for page in page_list %}
+    <li><a href="{% url 'indexapp:detail' page.id %}">{{ page.page_title | escape }} - {{ page.gmt_create }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
