@@ -20,7 +20,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def get_image(url, pic_path):
     # chromedriver的路径
-    chromedriver = r"/Users/textworld/bin/chromedriver"
+    chromedriver = settings.CHROME_DRIVE
     os.environ["webdriver.chrome.driver"] = chromedriver
     # 设置chrome开启的模式，headless就是无界面模式
     # 一定要使用这个模式，不然截不了全页面，只能截到你电脑的高度
